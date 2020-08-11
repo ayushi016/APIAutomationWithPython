@@ -1,0 +1,30 @@
+# Every test file has one or more tests...
+test_name: Get list of employees
+
+# ...and each test has one or more stages (e.g. an HTTP request)
+stages:
+  - name: Make sure we have the right ID
+
+    # Define the request to be made...
+    request:
+      url: https://reqres.in/api/users?page=2
+      method: GET
+
+    # ...and the expected response code and body
+    response:
+      status_code: 200
+      body:
+          page: 2
+          per_page: 6
+          total: 12
+          total_pages: 2
+          ad:
+             company: "StatusCode Weekly"
+          data:
+            -
+              - id: 7
+
+
+
+
+
